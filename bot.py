@@ -3,7 +3,7 @@ import os, random
 from bot_logic import gen_pass, gen_emodji, gen_fact  # Импортируем функции из bot_logic
     # Замени 'TOKEN' на токен твоего бота
     # Этот токен ты получаешь от BotFather, чтобы бот мог работать
-bot = telebot.TeleBot("8200360071:AAEYHi_o83dtOetmDu_DTkSz3epmmRlpNfM")
+bot = telebot.TeleBot("TOKEN")
     
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
@@ -41,6 +41,7 @@ def send_fact(message):
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
     bot.reply_to(message, message.text)
+
 
 
 bot.polling()
